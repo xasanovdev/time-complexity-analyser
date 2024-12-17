@@ -1,1 +1,196 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--logos" width="31.88" height="32" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 257"><defs><linearGradient id="IconifyId1813088fe1fbc01fb466" x1="-.828%" x2="57.636%" y1="7.652%" y2="78.411%"><stop offset="0%" stop-color="#41D1FF"></stop><stop offset="100%" stop-color="#BD34FE"></stop></linearGradient><linearGradient id="IconifyId1813088fe1fbc01fb467" x1="43.376%" x2="50.316%" y1="2.242%" y2="89.03%"><stop offset="0%" stop-color="#FFEA83"></stop><stop offset="8.333%" stop-color="#FFDD35"></stop><stop offset="100%" stop-color="#FFA800"></stop></linearGradient></defs><path fill="url(#IconifyId1813088fe1fbc01fb466)" d="M255.153 37.938L134.897 252.976c-2.483 4.44-8.862 4.466-11.382.048L.875 37.958c-2.746-4.814 1.371-10.646 6.827-9.67l120.385 21.517a6.537 6.537 0 0 0 2.322-.004l117.867-21.483c5.438-.991 9.574 4.796 6.877 9.62Z"></path><path fill="url(#IconifyId1813088fe1fbc01fb467)" d="M185.432.063L96.44 17.501a3.268 3.268 0 0 0-2.634 3.014l-5.474 92.456a3.268 3.268 0 0 0 3.997 3.378l24.777-5.718c2.318-.535 4.413 1.507 3.936 3.838l-7.361 36.047c-.495 2.426 1.782 4.5 4.151 3.78l15.304-4.649c2.372-.72 4.652 1.36 4.15 3.788l-11.698 56.621c-.732 3.542 3.979 5.473 5.943 2.437l1.313-2.028l72.516-144.72c1.215-2.423-.88-5.186-3.54-4.672l-25.505 4.922c-2.396.462-4.435-1.77-3.759-4.114l16.646-57.705c.677-2.35-1.37-4.583-3.769-4.113Z"></path></svg>
+<svg width="1200" height="1600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Markers for relationships -->
+    <marker id="inheritance" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 L 4 5 Z" fill="white" stroke="black"/>
+    </marker>
+    <marker id="composition" markerWidth="12" markerHeight="12" refX="6" refY="6" orient="auto">
+      <path d="M 6 0 L 12 6 L 6 12 L 0 6 Z" fill="black"/>
+    </marker>
+    <marker id="aggregation" markerWidth="12" markerHeight="12" refX="6" refY="6" orient="auto">
+      <path d="M 6 0 L 12 6 L 6 12 L 0 6 Z" fill="white" stroke="black"/>
+    </marker>
+    <marker id="dependency" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z"/>
+    </marker>
+    <marker id="extend" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="black"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="600" y="30" text-anchor="middle" font-size="24" font-weight="bold">Time Complexity Analysis System</text>
+  <text x="600" y="60" text-anchor="middle" font-size="16">Architecture Overview</text>
+
+  <!-- Class Diagram Section -->
+  <text x="600" y="100" text-anchor="middle" font-size="18" font-weight="bold">Class Diagram</text>
+
+  <!-- Core Classes -->
+  <!-- CodeComplexityAnalyzer -->
+  <g transform="translate(50,150)">
+    <rect width="200" height="180" fill="white" stroke="black" stroke-width="2"/>
+    <line x1="0" y1="30" x2="200" y2="30" stroke="black" stroke-width="2"/>
+    <line x1="0" y1="100" x2="200" y2="100" stroke="black" stroke-width="2"/>
+    <text x="100" y="20" text-anchor="middle" font-weight="bold">CodeComplexityAnalyzer</text>
+    <text x="10" y="50" class="property">- code: string</text>
+    <text x="10" y="70" class="property">- algorithm: Algorithm</text>
+    <text x="10" y="90" class="property">- parser: CodeParser</text>
+    <text x="10" y="120" class="method">+ analyzeCode(code: string): Result</text>
+    <text x="10" y="140" class="method">+ getTimeComplexity(): string</text>
+    <text x="10" y="160" class="method">+ getSpaceComplexity(): string</text>
+    <text x="10" y="180" class="method">+ compareAlgorithms(): Comparison</text>
+  </g>
+
+  <!-- Algorithm -->
+  <g transform="translate(400,150)">
+    <rect width="180" height="160" fill="white" stroke="black" stroke-width="2"/>
+    <line x1="0" y1="30" x2="180" y2="30" stroke="black" stroke-width="2"/>
+    <line x1="0" y1="90" x2="180" y2="90" stroke="black" stroke-width="2"/>
+    <text x="90" y="20" text-anchor="middle" font-weight="bold">Algorithm</text>
+    <text x="10" y="50" class="property">- name: string</text>
+    <text x="10" y="70" class="property">- complexity: Complexity</text>
+    <text x="10" y="110" class="method">+ analyze(): Complexity</text>
+    <text x="10" y="130" class="method">+ benchmark(): Performance</text>
+    <text x="10" y="150" class="method">+ visualize(): Graph</text>
+  </g>
+
+  <!-- CodeParser -->
+  <g transform="translate(700,150)">
+    <rect width="180" height="140" fill="white" stroke="black" stroke-width="2"/>
+    <line x1="0" y1="30" x2="180" y2="30" stroke="black" stroke-width="2"/>
+    <line x1="0" y1="70" x2="180" y2="70" stroke="black" stroke-width="2"/>
+    <text x="90" y="20" text-anchor="middle" font-weight="bold">CodeParser</text>
+    <text x="10" y="50" class="property">- ast: AbstractSyntaxTree</text>
+    <text x="10" y="90" class="method">+ parse(code: string): AST</text>
+    <text x="10" y="110" class="method">+ analyze(): CodeStructure</text>
+    <text x="10" y="130" class="method">+ validate(): boolean</text>
+  </g>
+
+  <!-- Result Classes -->
+  <!-- ComplexityResult -->
+  <g transform="translate(50,400)">
+    <rect width="200" height="160" fill="white" stroke="black" stroke-width="2"/>
+    <line x1="0" y1="30" x2="200" y2="30" stroke="black" stroke-width="2"/>
+    <line x1="0" y1="110" x2="200" y2="110" stroke="black" stroke-width="2"/>
+    <text x="100" y="20" text-anchor="middle" font-weight="bold">ComplexityResult</text>
+    <text x="10" y="50" class="property">+ timeComplexity: string</text>
+    <text x="10" y="70" class="property">+ spaceComplexity: string</text>
+    <text x="10" y="90" class="property">+ details: CodeDetail[]</text>
+    <text x="10" y="130" class="method">+ generateReport(): Report</text>
+    <text x="10" y="150" class="method">+ visualize(): Visualization</text>
+  </g>
+
+  <!-- History Management -->
+  <!-- HistoryManager -->
+  <g transform="translate(400,400)">
+    <rect width="180" height="140" fill="white" stroke="black" stroke-width="2"/>
+    <line x1="0" y1="30" x2="180" y2="30" stroke="black" stroke-width="2"/>
+    <line x1="0" y1="70" x2="180" y2="70" stroke="black" stroke-width="2"/>
+    <text x="90" y="20" text-anchor="middle" font-weight="bold">HistoryManager</text>
+    <text x="10" y="50" class="property">- records: AnalysisRecord[]</text>
+    <text x="10" y="90" class="method">+ addRecord(record: Record)</text>
+    <text x="10" y="110" class="method">+ getHistory(): Record[]</text>
+    <text x="10" y="130" class="method">+ clearHistory(): void</text>
+  </g>
+
+  <!-- Class Relationships -->
+  <!-- Analyzer to Algorithm -->
+  <path d="M 250 240 L 400 240" stroke="black" stroke-width="1.5" marker-end="url(#composition)"/>
+  <text x="325" y="230" text-anchor="middle">uses</text>
+
+  <!-- Analyzer to Parser -->
+  <path d="M 250 200 L 700 200" stroke="black" stroke-width="1.5" marker-end="url(#composition)"/>
+  <text x="475" y="190" text-anchor="middle">parses with</text>
+
+  <!-- Analyzer to Result -->
+  <path d="M 150 330 L 150 400" stroke="black" stroke-width="1.5" marker-end="url(#composition)"/>
+  <text x="170" y="365" text-anchor="start">produces</text>
+
+  <!-- Result to History -->
+  <path d="M 250 480 L 400 480" stroke="black" stroke-width="1.5" stroke-dasharray="4,4" marker-end="url(#dependency)"/>
+  <text x="325" y="470" text-anchor="middle">stored in</text>
+
+  <!-- Use Case Section -->
+  <text x="600" y="600" text-anchor="middle" font-size="18" font-weight="bold">Use Case Diagram</text>
+
+  <!-- System Boundary -->
+  <rect x="100" y="650" width="1000" height="800" fill="none" stroke="black" stroke-width="2" stroke-dasharray="5,5"/>
+  <text x="600" y="680" text-anchor="middle" font-size="16">Time Complexity Analysis System</text>
+
+  <!-- Actor -->
+  <circle cx="50" cy="900" r="20" fill="white" stroke="black" stroke-width="2"/>
+  <line x1="50" y1="920" x2="50" y2="980" stroke="black" stroke-width="2"/>
+  <line x1="20" y1="950" x2="80" y2="950" stroke="black" stroke-width="2"/>
+  <line x1="50" y1="980" x2="20" y2="1020" stroke="black" stroke-width="2"/>
+  <line x1="50" y1="980" x2="80" y2="1020" stroke="black" stroke-width="2"/>
+  <text x="50" y="1050" text-anchor="middle">User</text>
+
+  <!-- Main Use Cases -->
+  <!-- Analyze Code -->
+  <ellipse cx="200" cy="800" rx="80" ry="30" fill="white" stroke="black" stroke-width="2"/>
+  <text x="200" y="805" text-anchor="middle">Analyze Code</text>
+
+  <!-- Compare Algorithms -->
+  <ellipse cx="200" cy="900" rx="80" ry="30" fill="white" stroke="black" stroke-width="2"/>
+  <text x="200" y="905" text-anchor="middle">Compare Algorithms</text>
+
+  <!-- View History -->
+  <ellipse cx="200" cy="1000" rx="80" ry="30" fill="white" stroke="black" stroke-width="2"/>
+  <text x="200" y="1005" text-anchor="middle">View History</text>
+
+  <!-- Extended Use Cases -->
+  <!-- Time Analysis -->
+  <ellipse cx="500" cy="750" rx="80" ry="30" fill="white" stroke="black" stroke-width="2"/>
+  <text x="500" y="755" text-anchor="middle">Analyze Time</text>
+
+  <!-- Space Analysis -->
+  <ellipse cx="500" cy="850" rx="80" ry="30" fill="white" stroke="black" stroke-width="2"/>
+  <text x="500" y="855" text-anchor="middle">Analyze Space</text>
+
+  <!-- Performance Graph -->
+  <ellipse cx="500" cy="950" rx="80" ry="30" fill="white" stroke="black" stroke-width="2"/>
+  <text x="500" y="955" text-anchor="middle">View Performance</text>
+
+  <!-- Export Report -->
+  <ellipse cx="500" cy="1050" rx="80" ry="30" fill="white" stroke="black" stroke-width="2"/>
+  <text x="500" y="1055" text-anchor="middle">Export Report</text>
+
+  <!-- Use Case Relationships -->
+  <!-- User to Use Cases -->
+  <line x1="80" y1="900" x2="120" y2="800" stroke="black" stroke-width="1.5"/>
+  <line x1="80" y1="900" x2="120" y2="900" stroke="black" stroke-width="1.5"/>
+  <line x1="80" y1="900" x2="120" y2="1000" stroke="black" stroke-width="1.5"/>
+
+  <!-- Extend Relationships -->
+  <path d="M 280 800 C 350 800 400 750 420 750" stroke="black" stroke-width="1.5" stroke-dasharray="4,4" marker-end="url(#extend)"/>
+  <text x="350" y="760" text-anchor="middle">«extend»</text>
+
+  <path d="M 280 800 C 350 800 400 850 420 850" stroke="black" stroke-width="1.5" stroke-dasharray="4,4" marker-end="url(#extend)"/>
+  <text x="350" y="810" text-anchor="middle">«extend»</text>
+
+  <path d="M 280 900 C 350 900 400 950 420 950" stroke="black" stroke-width="1.5" stroke-dasharray="4,4" marker-end="url(#extend)"/>
+  <text x="350" y="910" text-anchor="middle">«extend»</text>
+
+  <path d="M 280 1000 C 350 1000 400 1050 420 1050" stroke="black" stroke-width="1.5" stroke-dasharray="4,4" marker-end="url(#extend)"/>
+  <text x="350" y="1010" text-anchor="middle">«extend»</text>
+
+  <!-- Legend -->
+  <g transform="translate(800,1300)">
+    <rect width="300" height="120" fill="white" stroke="black"/>
+    <text x="10" y="30" font-weight="bold">Legend:</text>
+    <line x1="10" y1="50" x2="60" y2="50" stroke="black" stroke-width="2" marker-end="url(#composition)"/>
+    <text x="70" y="55">Composition</text>
+    <line x1="150" y1="50" x2="200" y2="50" stroke="black" stroke-width="2" marker-end="url(#dependency)"/>
+    <text x="210" y="55">Dependency</text>
+    <line x1="10" y1="80" x2="60" y2="80" stroke="black" stroke-width="2" stroke-dasharray="4,4" marker-end="url(#extend)"/>
+    <text x="70" y="85">«extend»</text>
+    <line x1="150" y1="80" x2="200" y2="80" stroke="black" stroke-width="2" marker-end="url(#inheritance)"/>
+    <text x="210" y="85">Inheritance</text>
+  </g>
+
+  <style>
+    .property { font-size: 12px; }
+    .method { font-size: 12px; }
+    text { font-family: Arial, sans-serif; }
+  </style>
+</svg>
