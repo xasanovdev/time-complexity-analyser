@@ -35,8 +35,7 @@ function HomePage() {
   return (
     <div className="max-w-2xl min-h-screen flex items-center justify-center flex-col mx-auto p-4">
       <h1 className="text-2xl font-bold mb-4">Code Complexity Analyzer</h1>
-      <img src="/vite.svg" alt="Vite logo"/>
-      <form onSubmit={handleSubmit} className="space-y-4 w-full mt-4">
+        <form onSubmit={handleSubmit} className="space-y-4 w-full mt-4">
         <Textarea
           placeholder="Paste your code here..."
           value={code}
