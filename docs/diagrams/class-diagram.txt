@@ -1,0 +1,174 @@
+   Time Complexity Analysis System - Class Diagram
+   =====================================
+
+   1. Core Analysis Classes
+   -----------------------
+
+   [CodeComplexityAnalyzer]
+   ------------------------
+   Properties:
+   - sourceFile: ts.SourceFile
+   - code: string
+   - algorithm: Algorithm
+   - parser: CodeParser
+   Methods:
+   + analyzeCode(code: string): ComplexityResult
+   + getTimeComplexity(): string
+   + getSpaceComplexity(): string
+   + compareAlgorithms(): ComparisonResult
+
+   [Algorithm]
+   -----------
+   Properties:
+   - name: string
+   - complexity: Complexity
+   - implementation: string
+   Methods:
+   + analyze(): Complexity
+   + benchmark(): Performance
+   + visualize(): Graph
+
+   [CodeParser]
+   ------------
+   Properties:
+   - ast: AbstractSyntaxTree
+   Methods:
+   + parse(code: string): AST
+   + analyze(): CodeStructure
+   + validate(): boolean
+
+   2. Result Classes
+   ----------------
+
+   [ComplexityResult]
+   -----------------
+   Properties:
+   + timeComplexity: string
+   + spaceComplexity: string
+   + explanation: string
+   + details: CodeDetail[]
+   Methods:
+   + generateReport(): Report
+   + visualize(): Visualization
+
+   [CodeDetail]
+   ------------
+   Properties:
+   + lineNumber: number
+   + type: string
+   + complexity: string
+   Methods:
+   + toString(): string
+
+   [ComparisonResult]
+   -----------------
+   Properties:
+   + algorithm1: AlgorithmAnalysis
+   + algorithm2: AlgorithmAnalysis
+   + performanceData: PerformanceData[]
+   Methods:
+   + generateGraph(): Graph
+   + compareMetrics(): ComparisonMetrics
+
+   3. History Management
+   --------------------
+
+   [HistoryManager]
+   ---------------
+   Properties:
+   - records: AnalysisRecord[]
+   Methods:
+   + addRecord(record: Record): void
+   + getHistory(): Record[]
+   + clearHistory(): void
+
+   [AnalysisRecord]
+   ---------------
+   Properties:
+   + code: string
+   + result: ComplexityResult
+   + timestamp: string
+   Methods:
+   + format(): string
+
+   4. UI Components
+   ---------------
+
+   [HomePage]
+   ---------
+   Properties:
+   - code: string
+   - results: ComplexityResult
+   - loading: boolean
+   Methods:
+   + handleSubmit(e: Event): void
+   + setCode(code: string): void
+
+   [AlgorithmComparison]
+   --------------------
+   Properties:
+   - algorithm1: string
+   - algorithm2: string
+   - comparison: ComparisonResult
+   Methods:
+   + compareAlgorithms(): void
+   + visualizeComparison(): void
+
+   [Learning]
+   ---------
+   Properties:
+   - timeComplexityData: ComplexityData[]
+   - spaceComplexityData: ComplexityData[]
+   Methods:
+   + renderContent(): ReactNode
+   + handleTabChange(): void
+
+   5. Relationships
+   ---------------
+
+   1. Composition:
+      * CodeComplexityAnalyzer --[contains]--> Algorithm
+      * CodeComplexityAnalyzer --[contains]--> CodeParser
+      * ComplexityResult --[contains]--> CodeDetail[]
+
+   2. Dependencies:
+      * HomePage --[uses]--> CodeComplexityAnalyzer
+      * AlgorithmComparison --[uses]--> CodeComplexityAnalyzer
+      * HistoryManager --[uses]--> ComplexityResult
+
+   3. Inheritance:
+      * AlgorithmAnalysis --[extends]--> ComplexityResult
+      * ComparisonResult --[extends]--> ComplexityResult
+
+   4. Aggregation:
+      * HistoryManager --[aggregates]--> AnalysisRecord[]
+      * Learning --[aggregates]--> ComplexityData[]
+
+   6. Data Types
+   ------------
+
+   [Complexity]
+   -----------
+   Enum:
+   - O1
+   - LOGN
+   - N
+   - NLOGN
+   - N2
+   - N3
+   - EXPONENTIAL
+
+   [PerformanceData]
+   ----------------
+   Properties:
+   + input: number
+   + algo1Time: number
+   + algo2Time: number
+
+   [ComplexityData]
+   ---------------
+   Properties:
+   + title: string
+   + description: string
+   + examples: string[]
+   + code: string
